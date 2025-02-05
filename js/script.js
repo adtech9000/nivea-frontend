@@ -22,7 +22,7 @@ for (let i = 0; i < frames.length; i++) {
 function start() {
     setTimeout(() => {
         startFrameTwo();
-    },1000)
+    },5000)
 }
 
 function startFrameTwo() {
