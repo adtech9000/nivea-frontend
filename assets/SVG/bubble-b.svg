@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 197.71 55.13">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4 {
+        fill: #000;
+        font-family: NIVEABrandTypeTT-Medium, 'NIVEA Brand Type TT';
+        font-size: 12.54px;
+        font-weight: 500;
+      }
+
+      .cls-5 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-6 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .cls-8 {
+        fill: #fff;
+        opacity: .66;
+        stroke-width: 0px;
+      }
+
+      .cls-9 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-10 {
+        letter-spacing: 0em;
+      }
+
+      .cls-11 {
+        letter-spacing: 0em;
+      }
+
+      .cls-12 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-13 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-14 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-15 {
+        letter-spacing: -.05em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <path class="cls-8" d="M181.76,0H6C2.68,0,0,2.68,0,6v25.27c0,5.62,2.92,10.56,7.31,13.4l1.6,7.55c.42,1.99,2.37,3.26,4.36,2.84l2.15-.45c4.04-.86,7.12-3.75,8.41-7.38h165.04c4.89,0,8.85-3.96,8.85-8.85V15.95c0-8.81-7.14-15.95-15.95-15.95Z"/>
+    <text class="cls-4" transform="translate(18.99 20.35)"><tspan class="cls-10" x="0" y="0">N</tspan><tspan class="cls-6" x="9.07" y="0">o</tspan><tspan class="cls-12" x="16.26" y="0">w</tspan><tspan class="cls-1" x="26.12" y="0">,</tspan><tspan x="28.78" y="0" xml:space="preserve"> it</tspan><tspan class="cls-15" x="39.68" y="0">’</tspan><tspan x="41.98" y="0">s</tspan><tspan class="cls-13" x="48.06" y="0"> </tspan><tspan x="50.81" y="0">time</tspan><tspan class="cls-13" x="77.76" y="0"> </tspan><tspan class="cls-3" x="80.51" y="0">t</tspan><tspan x="85.37" y="0">o learn h</tspan><tspan class="cls-6" x="136.4" y="0">o</tspan><tspan class="cls-14" x="143.58" y="0">w</tspan><tspan x="153.88" y="0"> </tspan><tspan class="cls-3" x="0" y="15.04">t</tspan><tspan class="cls-11" x="4.87" y="15.04">o </tspan><tspan class="cls-5" x="15.32" y="15.04">k</tspan><tspan class="cls-11" x="21.56" y="15.04">eep odou</tspan><tspan class="cls-2" x="76.7" y="15.04">r</tspan><tspan x="81.26" y="15.04" xml:space="preserve"> at b</tspan><tspan class="cls-7" x="107.54" y="15.04">a</tspan><tspan class="cls-9" x="115.2" y="15.04">y</tspan></text>
+  </g>
+</svg>
