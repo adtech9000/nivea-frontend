@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const learnMoreBtn = document.getElementById("learnMore");
 
     const apiUrl = "https://nivea-backend.onrender.com/api/impression";
-    const redirectUrl = "https://www.niveausa.com/";
+    const redirectUrl = "https://www.nivea.com.ng/highlights/how-to-stay-dry-all-day";
 
     learnMoreBtn.addEventListener("click", function () {
         fetch(apiUrl, {
@@ -142,11 +142,11 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(data => {
                 console.log("API Response:", data);
-                window.location.href = redirectUrl;
+                window.open(redirectUrl, '_blank');
             })
             .catch(error => {
                 console.error("API Error:", error);
-                window.location.href = redirectUrl;
+                window.open(redirectUrl, '_blank');
             });
     });
 });
