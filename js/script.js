@@ -121,7 +121,7 @@ function startFrameFive(){
 document.addEventListener("DOMContentLoaded", function () {
     const learnMoreBtn = document.getElementById("learnMore");
 
-    const apiUrl = "https://nivea-backend.onrender.com/api/impression";
+    const apiUrl = "https://nivea-backend-production.up.railway.app/api/impression";
     const redirectUrl = "https://www.nivea.com.ng/highlights/how-to-stay-dry-all-day";
 
     learnMoreBtn.addEventListener("click", function () {
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const yesBtn = document.getElementById("yes");
     const noBtn = document.getElementById("no");
 
-    const baseApiUrl = "https://nivea-backend.onrender.com/api/engagement?response=";
+    const baseApiUrl = "https://nivea-backend-production.up.railway.app/api/engagement?response=";
     function trackResponse(response) {
         fetch(baseApiUrl + response, {
             method: "POST",
