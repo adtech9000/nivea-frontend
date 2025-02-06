@@ -11,7 +11,8 @@
         min-width: 320px;
         max-width: 320px;
         background-color: black;
-        font-family: "Poppins", serif;
+        font-family: 'NIVEABrandTypeTT-Bold';
+        src: url('assets/fonts/NIVEABrandTypeTT-Bold.otf') format('woff');
         font-weight: 200;
         font-style: normal;
         font-size: 0.99rem;
