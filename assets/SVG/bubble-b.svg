@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 197.71 55.13">
   <defs>
-    <style>
+    <style type="text/css">
+      @font-face {
+        font-family: "NIVEABrandTypeWeb-Regular";
+        src: url("../fonts/NIVEABrandTypeWeb-Regular.woff2") format('woff2');
+        font-weight: 700;
+        font-style: normal;
+      }
       .cls-1 {
         letter-spacing: -.02em;
       }
@@ -16,7 +22,7 @@
 
       .cls-4 {
         fill: #000;
-        font-family: NIVEABrandTypeTT-Medium, 'NIVEA Brand Type TT';
+        font-family: 'NIVEABrandTypeWeb-Regular', sans-serif;
         font-size: 12.54px;
         font-weight: 500;
       }

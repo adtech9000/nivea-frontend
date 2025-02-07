@@ -64,9 +64,9 @@ function startFrameThree(decision){
 
     setTimeout(()=> {
         if (decision === true){
-        result.innerHTML = "<p>Good to know</p>"
+        result.innerHTML = "<p style='margin-bottom: 13px'>Good to know</p> <div class='lines'><div>"
         }else{
-        result.innerHTML = "<p>Eccrine glands helps to cool your body</p> <div class='lines'><div> <p style='margin-top:10px; padding-top:10px'>Apocrine glands are often responsible for odour</p>"
+        result.innerHTML = "<p style='border-bottom:2px solid #ACB3C1; padding-bottom:10px'>Eccrine glands helps to cool your body</p>  <p style='margin-top:5px;'>Apocrine glands are often responsible for odour</p>"
         }
     }, 1000)
 
