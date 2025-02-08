@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const learnMoreFrame = document.getElementById("learnMoreFrame");
     const learnMoreLink = document.getElementById("learnMoreLink");
 
-    if (!learnMoreFrame) return;
+    if (!learnMoreFrame || !learnMoreLink) return;
 
     const trackingUrl = "%%CLICK_URL_UNESC%%";  // LoopMe tracking macro
     const finalUrl = "https://www.nivea.com.ng/highlights/how-to-stay-dry-all-day";
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
         setTimeout(() => {
-            if (!newTab || newTab.closed) {
+            if (!redirectUrl || redirectUrl.closed) {
                 window.open(redirectUrl, '_blank');
             }
         }, 1500);
