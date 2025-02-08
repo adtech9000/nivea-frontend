@@ -122,15 +122,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const learnMoreBtn = document.getElementById("learnMore");
     const learnMoreLink = document.getElementById("learnMoreLink");
 
+    const trackingUrl = "%%CLICK_URL_UNESC%%";  // LoopMe's tracking macro
+    const finalUrl = "https://www.nivea.com.ng/highlights/how-to-stay-dry-all-day";
     const apiUrl = "https://nivea-backend-production.up.railway.app/api/impression";
 
     learnMoreBtn.addEventListener("click", function (event) {
-        event.preventDefault();
-        const redirectTab = window.open(learnMoreLink.href, '_blank');
+        event.preventDefault(); // Prevent default link behavior
 
-        if (typeof window.LoopMeClickthrough === "function") window.LoopMeClickthrough();
-        else console.warn("LoopMe Click through not found. Ensure LoopMe has initialized.");
+        // 🔹 Ensure LoopMe clickthrough tracking is fired
+        let redirectUrl = trackingUrl + finalUrl;
 
+        // 🔹 Open the final URL in a new tab
+        const newTab = window.open(redirectUrl, '_blank');
+
+        // 🔹 Send tracking data to backend
         fetch(apiUrl, {
             method: "POST",
             headers: {
@@ -146,13 +151,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error("API Error:", error);
             });
 
+        // 🔹 Fallback: If the new tab fails to open, retry after a delay
         setTimeout(() => {
-            if (!redirectTab || redirectTab.closed) {
-                window.open(learnMoreLink.href, '_blank');
+            if (!newTab || newTab.closed) {
+                window.open(redirectUrl, '_blank');
             }
         }, 1500);
     });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
