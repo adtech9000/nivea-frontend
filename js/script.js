@@ -119,7 +119,7 @@ function startFrameFive(){
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const learnMoreBtn = document.getElementById("learnMore");
+    const learnMoreBtn = document.getElementById("learnMoreFrame");
 
     const trackingUrl = "%%CLICK_URL_UNESC%%";
     const finalUrl = "https://www.nivea.com.ng/highlights/how-to-stay-dry-all-day";
@@ -141,9 +141,11 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.json())
             .then(data => {
                 console.log("API Response:", data);
+                window.open(redirectUrl, '_blank');
             })
             .catch(error => {
                 console.error("API Error:", error);
+                window.open(redirectUrl, '_blank');
             });
 
         setTimeout(() => {
