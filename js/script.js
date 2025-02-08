@@ -119,22 +119,21 @@ function startFrameFive(){
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const lastFrame = document.getElementById("lastFrame"); // Whole last page is now clickable
+    const learnMoreFrame = document.getElementById("learnMoreFrame");
+
+    if (!learnMoreFrame) return;
 
     const trackingUrl = "%%CLICK_URL_UNESC%%";  // LoopMe tracking macro
     const finalUrl = "https://www.nivea.com.ng/highlights/how-to-stay-dry-all-day";
     const apiUrl = "https://nivea-backend-production.up.railway.app/api/impression";
 
-    lastFrame.addEventListener("click", function (event) {
+    learnMoreFrame.addEventListener("click", function (event) {
         event.preventDefault(); // Prevent default behavior
 
-        // 🔹 Construct the LoopMe-tracked URL
         let redirectUrl = trackingUrl + finalUrl;
 
-        // 🔹 Open the redirect URL in a new tab
         const newTab = window.open(redirectUrl, '_blank');
 
-        // 🔹 Send tracking event to backend
         fetch(apiUrl, {
             method: "POST",
             headers: {
@@ -145,12 +144,8 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => {
                 const contentType = response.headers.get("content-type");
 
-                // ✅ Check if response is JSON before parsing
-                if (contentType && contentType.includes("application/json")) {
-                    return response.json();
-                } else {
-                    return response.text(); // Handle non-JSON responses safely
-                }
+                if (contentType && contentType.includes("application/json")) return response.json();
+                else return response.text();
             })
             .then(data => {
                 console.log("API Response:", data);
@@ -159,7 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error("API Error:", error);
             });
 
-        // 🔹 Fallback: If the new tab fails to open, retry after a delay
         setTimeout(() => {
             if (!newTab || newTab.closed) {
                 window.open(redirectUrl, '_blank');
@@ -167,8 +161,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1500);
     });
 });
-
-
 
 
 document.addEventListener("DOMContentLoaded", function () {
