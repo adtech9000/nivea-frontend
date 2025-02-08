@@ -120,11 +120,17 @@ function startFrameFive(){
 
 document.addEventListener("DOMContentLoaded", function () {
     const learnMoreBtn = document.getElementById("learnMore");
+    const learnMoreLink = document.getElementById("learnMoreLink");
 
     const apiUrl = "https://nivea-backend-production.up.railway.app/api/impression";
-    const redirectUrl = "https://www.nivea.com.ng/highlights/how-to-stay-dry-all-day";
 
-    learnMoreBtn.addEventListener("click", function () {
+    learnMoreBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        const redirectTab = window.open(learnMoreLink.href, '_blank');
+
+        if (typeof window.LoopMeClickthrough === "function") window.LoopMeClickthrough();
+        else console.warn("LoopMe Click through not found. Ensure LoopMe has initialized.");
+
         fetch(apiUrl, {
             method: "POST",
             headers: {
@@ -132,24 +138,22 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             body: JSON.stringify({ message: "User clicked Learn More" }),
         })
-            .then(response => {
-                const contentType = response.headers.get("content-type");
-                if (contentType && contentType.includes("application/json")) {
-                    return response.json();
-                } else {
-                    return response.text();
-                }
-            })
+            .then(response => response.json())
             .then(data => {
                 console.log("API Response:", data);
-                window.open(redirectUrl, '_blank');
             })
             .catch(error => {
                 console.error("API Error:", error);
-                window.open(redirectUrl, '_blank');
             });
+
+        setTimeout(() => {
+            if (!redirectTab || redirectTab.closed) {
+                window.open(learnMoreLink.href, '_blank');
+            }
+        }, 1500);
     });
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const yesBtn = document.getElementById("yes");
@@ -168,20 +172,4 @@ document.addEventListener("DOMContentLoaded", function () {
     yesBtn.addEventListener("click", () => trackResponse("yes"));
     noBtn.addEventListener("click", () => trackResponse("no"));
 });
-
-
-// (function() {
-//     const scriptEl = document.currentScript;
-//     if (!scriptEl) return;
-//     const insEl = scriptEl.parentNode;
-//
-//     insEl.innerHTML = `
-//     <iframe src="../index.html"
-//             width="300"
-//             height="250"
-//             style="border:none;overflow:hidden;">
-//     </iframe>
-//   `;
-// })();
-
 start();
