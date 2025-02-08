@@ -120,6 +120,7 @@ function startFrameFive(){
 
 document.addEventListener("DOMContentLoaded", function () {
     const learnMoreFrame = document.getElementById("learnMoreFrame");
+    const learnMoreLink = document.getElementById("learnMoreLink");
 
     if (!learnMoreFrame) return;
 
@@ -127,12 +128,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const finalUrl = "https://www.nivea.com.ng/highlights/how-to-stay-dry-all-day";
     const apiUrl = "https://nivea-backend-production.up.railway.app/api/impression";
 
-    learnMoreFrame.addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent default behavior
-
+    learnMoreFrame.addEventListener("click", function () {
         let redirectUrl = trackingUrl.includes("CLICK_URL") ? trackingUrl + finalUrl : finalUrl;
-
-        const newTab = window.open(redirectUrl, '_blank');
+        learnMoreLink.href = redirectUrl;
 
         fetch(apiUrl, {
             method: "POST",
