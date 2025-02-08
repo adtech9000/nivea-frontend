@@ -167,6 +167,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const yesBtn = document.getElementById("yes");
     const noBtn = document.getElementById("no");
 
+    if (!yesBtn || noBtn) return;
+
     const baseApiUrl = "https://nivea-backend-production.up.railway.app/api/engagement?response=";
     function trackResponse(response) {
         fetch(baseApiUrl + response, {
