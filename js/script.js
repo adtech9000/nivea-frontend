@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
     learnMoreFrame.addEventListener("click", function (event) {
         event.preventDefault(); // Prevent default behavior
 
-        let redirectUrl = trackingUrl + finalUrl;
+        let redirectUrl = trackingUrl.includes("CLICK_URL") ? trackingUrl + finalUrl : finalUrl;
 
         const newTab = window.open(redirectUrl, '_blank');
 
