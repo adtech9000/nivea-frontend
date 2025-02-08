@@ -119,35 +119,47 @@ function startFrameFive(){
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const learnMoreBtn = document.getElementById("learnMoreFrame");
+    const lastFrame = document.getElementById("lastFrame"); // Whole last page is now clickable
 
-    const trackingUrl = "%%CLICK_URL_UNESC%%";
+    const trackingUrl = "%%CLICK_URL_UNESC%%";  // LoopMe tracking macro
     const finalUrl = "https://www.nivea.com.ng/highlights/how-to-stay-dry-all-day";
     const apiUrl = "https://nivea-backend-production.up.railway.app/api/impression";
 
-    learnMoreBtn.addEventListener("click", function (event) {
-        event.preventDefault();
+    lastFrame.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default behavior
 
+        // 🔹 Construct the LoopMe-tracked URL
         let redirectUrl = trackingUrl + finalUrl;
+
+        // 🔹 Open the redirect URL in a new tab
         const newTab = window.open(redirectUrl, '_blank');
 
+        // 🔹 Send tracking event to backend
         fetch(apiUrl, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ message: "User clicked Learn More" }),
+            body: JSON.stringify({ message: "User clicked the last frame (Learn More)" }),
         })
-            .then(response => response.json())
+            .then(response => {
+                const contentType = response.headers.get("content-type");
+
+                // ✅ Check if response is JSON before parsing
+                if (contentType && contentType.includes("application/json")) {
+                    return response.json();
+                } else {
+                    return response.text(); // Handle non-JSON responses safely
+                }
+            })
             .then(data => {
                 console.log("API Response:", data);
-                window.open(redirectUrl, '_blank');
             })
             .catch(error => {
                 console.error("API Error:", error);
-                window.open(redirectUrl, '_blank');
             });
 
+        // 🔹 Fallback: If the new tab fails to open, retry after a delay
         setTimeout(() => {
             if (!newTab || newTab.closed) {
                 window.open(redirectUrl, '_blank');
@@ -155,6 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1500);
     });
 });
+
 
 
 
