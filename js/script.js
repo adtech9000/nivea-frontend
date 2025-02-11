@@ -131,9 +131,23 @@ document.addEventListener("DOMContentLoaded", function () {
         return urlParams.get(param);
     }
 
+    function getAllQueryParams() {
+        const urlParams = new URLSearchParams(window.location.search);
+        let paramsObj = {};
+
+        urlParams.forEach((value, key) => {
+            paramsObj[key] = value;
+        });
+
+        return paramsObj;
+    }
+    console.log("All Query Parameters:", getAllQueryParams());
+
     learnMoreFrame.addEventListener("click", function () {
         let clickTag = getQueryParam("clickTag");
         let fullClickUrl = clickTag != null ? clickTag + redirectUrl : redirectUrl;
+        console.log("Click Tag URL :::", clickTag)
+        console.log("Full Click URL :::", fullClickUrl)
         learnMoreButton.setAttribute("href", fullClickUrl);
 
         fetch(apiUrl, {
