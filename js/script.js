@@ -131,29 +131,17 @@ document.addEventListener("DOMContentLoaded", function () {
         return urlParams.get(param);
     }
 
-    function getAllQueryParams() {
-        const urlParams = new URLSearchParams(window.location.search);
-        let paramsObj = {};
-
-        urlParams.forEach((value, key) => {
-            paramsObj[key] = value;
-        });
-
-        return paramsObj;
-    }
-    console.log("All Query Parameters:", getAllQueryParams());
-
     learnMoreFrame.addEventListener("click", function () {
         let clickTag = getQueryParam("clickTag");
-        let fullClickUrl = clickTag != null ? clickTag + redirectUrl : redirectUrl;
+        let fullClickUrl = clickTag != null ? clickTag + encodeURIComponent(redirectUrl) : redirectUrl;
         console.log("Click Tag URL :::", clickTag)
         console.log("Full Click URL :::", fullClickUrl)
         learnMoreButton.setAttribute("href", fullClickUrl);
 
         fetch(apiUrl, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ message: "User clicked the last frame (Learn More)" }),
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({message: "User clicked the last frame (Learn More)"}),
         }).catch(error => console.error("API Error:", error));
     });
 });
