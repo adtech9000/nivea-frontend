@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     learnMoreFrame.addEventListener("click", function () {
         let clickTag = getQueryParam("clickTag");
-        let fullClickUrl = clickTag ? clickTag + encodeURIComponent(redirectUrl) : redirectUrl;
+        let fullClickUrl = clickTag != null ? clickTag + encodeURIComponent(redirectUrl) : redirectUrl;
         learnMoreButton.setAttribute("href", fullClickUrl);
 
         fetch(apiUrl, {
