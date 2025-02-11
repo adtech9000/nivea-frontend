@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     learnMoreFrame.addEventListener("click", function () {
         let clickTag = getQueryParam("clickTag");
-        let fullClickUrl = clickTag != null ? clickTag + encodeURIComponent(redirectUrl) : redirectUrl;
+        let fullClickUrl = clickTag != null ? clickTag + encodeURIComponent(redirectUrl) : encodeURIComponent(redirectUrl);
         learnMoreButton.setAttribute("href", fullClickUrl);
 
         fetch(apiUrl, {
@@ -141,8 +141,6 @@ document.addEventListener("DOMContentLoaded", function () {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ message: "User clicked the last frame (Learn More)" }),
         }).catch(error => console.error("API Error:", error));
-
-        window.open(fullClickUrl, "_blank");
     });
 });
 
