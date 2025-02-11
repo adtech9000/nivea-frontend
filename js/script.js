@@ -120,19 +120,31 @@ function startFrameFive() {
 
 document.addEventListener("DOMContentLoaded", function () {
     const learnMoreFrame = document.getElementById("learnMoreFrame");
-
-    if (!learnMoreFrame) return;
+    const learnMoreButton = document.getElementById("learnMoreLink");
     const apiUrl = "https://nivea-backend-production.up.railway.app/api/impression";
+    const redirectUrl = "https://www.nivea.com.ng/highlights/how-to-stay-dry-all-day";
+
+    if (!learnMoreFrame || !learnMoreButton) return;
+
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
 
     learnMoreFrame.addEventListener("click", function () {
+        let clickTag = getQueryParam("clickTag");
+        let fullClickUrl = clickTag ? clickTag + encodeURIComponent(redirectUrl) : encodeURIComponent(redirectUrl);
+        learnMoreButton.setAttribute("href", fullClickUrl);
+
         fetch(apiUrl, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ message: "User clicked the last frame (Learn More)" }),
         }).catch(error => console.error("API Error:", error));
+
+        window.open(fullClickUrl, "_blank");
     });
 });
-
 
 
 document.addEventListener("DOMContentLoaded", function () {
