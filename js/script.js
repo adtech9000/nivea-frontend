@@ -169,4 +169,4 @@ document.addEventListener("DOMContentLoaded", function () {
     yesBtn.addEventListener("click", () => trackResponse("yes"));
     noBtn.addEventListener("click", () => trackResponse("no"));
 });
-
+start()
