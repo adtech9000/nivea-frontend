@@ -13,10 +13,10 @@
     body,
     html,
     .container{
-        max-height: 480px;
-        min-height: 480px;
-        min-width: 320px;
-        max-width: 320px;
+        max-height: 600px;
+        min-height: 600px;
+        min-width: 300px;
+        max-width: 300px;
         background-color: black;
         font-family:"NIVEABrandTypeWeb-Bold", sans-serif;
         font-weight: 200;
@@ -70,19 +70,19 @@
     .first-frame,
     .main-frame,
     .last-frame{
-        max-height: 480px;
-        min-height: 480px;
-        min-width: 320px;
-        max-width: 320px;
+        max-height: 600px;
+        min-height: 600px;
+        min-width: 300px;
+        max-width: 300px;
     }
 
     .first-frame{
-     background-image: url("/assets/frame_one_bg.png");
+     background-image: url("/assets/frame_one_bg_300_600.png");
      background-size: cover;
     }
 
     .main-frame {
-        background-image: url("/assets/main_bg_1.png");
+        background-image: url("/assets/main_bg_300_600.png");
         background-size: cover;
     
     }
@@ -91,8 +91,8 @@
     .last-frame{
         background-image: url("/assets/nivea-image.png");
         background-color: #50B6FE;
-        background-size: 70%;
-        background-position: center top 40px;
+        background-size: 90%;
+        background-position: center right 20px;
         background-repeat: no-repeat;
     }
 
@@ -112,7 +112,7 @@
         text-align: center;
         margin: 0 5% auto;
         border-radius: 10px;
-        transform: translateY(25.9rem);
+        transform: translateY(32.9rem);
     }
     .cta:hover{
         background-color: white;
@@ -161,12 +161,12 @@
     }
 
     #yes{
-            top: 1rem;
+            top: 2rem;
             left: 5rem;
     }
 
     #no {
-        top: 2rem;
+        top: 3rem;
         left: 5rem;
     }
 
@@ -199,7 +199,7 @@
 }
 
 .unchecked-option:hover::after {
-    width: 100%;
+    width: 80%;
     opacity: 0.3;
     
 }
@@ -277,7 +277,7 @@
     width: 200px;
     line-height: 1.5;
     font-size: 0.85rem;
-    transform: translateY(-9rem) translateX(5rem);
+    transform: translateY(-9rem) translateX(3.5rem);
     cursor: pointer;
 }
 
@@ -293,7 +293,7 @@
     width: 200px;
     line-height: 1.5;
     font-size: 0.85rem;
-    transform: translateY(-20rem) translateX(5rem);
+    transform: translateY(-20rem) translateX(3.5rem);
     cursor: pointer;     
     display: none;   
 }

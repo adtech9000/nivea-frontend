@@ -22,7 +22,7 @@ for (let i = 0; i < frames.length; i++) {
 function start() {
     setTimeout(() => {
         startFrameTwo();
-    },5000)
+    },2000)
 }
 
 function startFrameTwo() {
@@ -34,19 +34,19 @@ loader.style.top = "2.5rem";
     setTimeout(() => {
         loader.style.display = "none";
         bubbleA.style.display = "block"
-    }, 2000);
+    }, 1500);
 
     frames[0].classList.add('frame-display');
     frames[1].classList.remove('frame-display');
     setTimeout(() => {
         yesOption.style.display = "block";
         yesOption.classList.add('text-focus-in')
-    },3000)
+    },2000)
 
     setTimeout(() => {
         no.style.display = "block";
         no.classList.add('text-focus-in')
-    },4000)
+    },3000)
 }
 
 yesOption.addEventListener("click", () => {
@@ -109,7 +109,7 @@ function startFrameFour(){
 
     setTimeout(() => {
         startFrameFive();
-    },8000)
+    },4000)
     
 }
 
