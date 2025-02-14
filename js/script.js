@@ -22,7 +22,7 @@ for (let i = 0; i < frames.length; i++) {
 function start() {
     setTimeout(() => {
         startFrameTwo();
-    },5000)
+    },2000)
 }
 
 function startFrameTwo() {
@@ -64,7 +64,7 @@ function startFrameThree(decision){
 
     setTimeout(()=> {
         if (decision === true){
-        result.innerHTML = "<p style='margin-bottom: 13px'>Good to know</p> <div class='lines'><div>"
+        result.innerHTML = "<p style='margin-bottom: 50px'>Good to know</p> <div class='lines-v1'><div>"
         }else{
         result.innerHTML = "<p style='border-bottom:2px solid #ACB3C1; padding-bottom:10px'>Eccrine glands helps to cool your body</p>  <p style='margin-top:5px;'>Apocrine glands are often responsible for odour</p>"
         }
@@ -96,7 +96,7 @@ function startFrameThree(decision){
 
     setTimeout(() => {
         startFrameFour();
-    },7000)
+    },4000)
 }
 
 function startFrameFour(){
@@ -109,7 +109,7 @@ function startFrameFour(){
 
     setTimeout(() => {
         startFrameFive();
-    },8000)
+    },4000)
     
 }
 

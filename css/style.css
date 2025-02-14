@@ -13,10 +13,10 @@
     body,
     html,
     .container{
-        max-height: 480px;
-        min-height: 480px;
-        min-width: 320px;
-        max-width: 320px;
+        max-height: 320px;
+        min-height: 320px;
+        min-width: 480px;
+        max-width: 480px;
         background-color: black;
         font-family:"NIVEABrandTypeWeb-Bold", sans-serif;
         font-weight: 200;
@@ -70,29 +70,30 @@
     .first-frame,
     .main-frame,
     .last-frame{
-        max-height: 480px;
-        min-height: 480px;
-        min-width: 320px;
-        max-width: 320px;
+        max-height: 320px;
+        min-height: 320px;
+        min-width: 480px;
+        max-width: 480px;
     }
 
     .first-frame{
-     background-image: url("/assets/frame_one_bg.png");
+     background-image: url("/assets/frame_one_bg_480_320.png");
      background-size: cover;
+     background-repeat: no-repeat;
+    
     }
 
     .main-frame {
-        background-image: url("/assets/main_bg_1.png");
+        background-image: url("/assets/main_bg_480_320.png");
         background-size: cover;
-    
     }
 
 
     .last-frame{
         background-image: url("/assets/nivea-image.png");
         background-color: #50B6FE;
-        background-size: 70%;
-        background-position: center top 40px;
+        background-size: 40%;
+        background-position: left center 40px;
         background-repeat: no-repeat;
     }
 
@@ -107,12 +108,12 @@
     .cta{
         background-color: #0032A0;
         padding: 10px;
-        width: 80%;
+        width: 50%;
         color: #fff;
         text-align: center;
-        margin: 0 5% auto;
+        margin: 0 10% 0 42%;
         border-radius: 10px;
-        transform: translateY(25.9rem);
+        transform: translateY(10.9rem);
     }
     .cta:hover{
         background-color: white;
@@ -128,8 +129,12 @@
     }
     #bubbleB{
         display: none;
-        /* transform: translateY(-9rem); */
+        position: absolute;
+        top: 15rem;
     }
+    /* .level-two{
+        transform: translateY(1rem);
+    } */
 
     .slide-top {
         -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -161,13 +166,13 @@
     }
 
     #yes{
-            top: 1rem;
-            left: 5rem;
+            top: 2rem;
+            left: 13rem;
     }
 
     #no {
-        top: 2rem;
-        left: 5rem;
+        top: 3rem;
+        left: 13rem;
     }
 
  /* #no:hover,
@@ -199,7 +204,7 @@
 }
 
 .unchecked-option:hover::after {
-    width: 100%;
+    width: 80%;
     opacity: 0.3;
     
 }
@@ -277,7 +282,7 @@
     width: 200px;
     line-height: 1.5;
     font-size: 0.85rem;
-    transform: translateY(-9rem) translateX(5rem);
+    transform: translateY(-10rem) translateX(13rem);
     cursor: pointer;
 }
 
@@ -293,7 +298,7 @@
     width: 200px;
     line-height: 1.5;
     font-size: 0.85rem;
-    transform: translateY(-20rem) translateX(5rem);
+    transform: translateY(-18rem) translateX(12rem);
     cursor: pointer;     
     display: none;   
 }
@@ -306,3 +311,13 @@
     margin-bottom: 10px;
 }
 
+.lines-v1{
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    opacity: 0.5;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+}
