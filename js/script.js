@@ -43,8 +43,8 @@ function startFrameTwo() {
     }, 3000)
 
     setTimeout(() => {
-        no.style.display = "block";
-        no.classList.add('text-focus-in')
+        noOption.style.display = "block";
+        noOption.classList.add('text-focus-in')
     }, 4000)
 }
 
@@ -65,7 +65,8 @@ function startFrameThree(decision) {
         if (decision === true) {
             result.innerHTML = "<p style='margin-bottom: 13px'>Good to know</p> <div class='lines'><div>"
         } else {
-            result.innerHTML = "<p style='border-bottom:2px solid #ACB3C1; padding-bottom:10px'>Eccrine glands helps to cool your body</p>  <p style='margin-top:5px;'>Apocrine glands are often responsible for odour</p>"
+            result.innerHTML = "<p style='border-bottom:2px solid #ACB3C1; padding-bottom:10px'>Eccrine glands helps to cool your body</p>" +
+                "<p style='margin-top:5px;'>Apocrine glands are often responsible for odour</p>"
         }
     }, 1000)
 
