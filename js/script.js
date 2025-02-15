@@ -14,7 +14,6 @@ let lastFrame = document.querySelector(".last-frame");
 let yesNoResult = false;
 
 for (let i = 0; i < frames.length; i++) {
-    console.log("consoling")
     if (i === 0) continue;
     frames[i].classList.add('frame-display');
 }
