@@ -121,7 +121,7 @@ function startFrameFive() {
 document.addEventListener("DOMContentLoaded", function () {
     const learnMoreFrame = document.getElementById("learnMoreFrame");
     const learnMoreButton = document.getElementById("learnMoreLink");
-    const apiUrl = "https://nivea-backend-production.up.railway.app/api/impression?dimension=dimension_480_320";
+    const apiUrl = "https://nivea-backend-production.up.railway.app/api/impression?dimension=dimension_300_250";
     const redirectUrl = "https://www.nivea.com.ng/highlights/how-to-stay-dry-all-day";
 
     if (!learnMoreFrame || !learnMoreButton) return;
@@ -152,16 +152,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const noBtn = document.getElementById("no");
 
     if (!yesBtn || !noBtn) return;
-
-    const baseApiUrl = "https://nivea-backend-production.up.railway.app/api/engagement?response=";
-    const dimensionParam = "&dimension=dimension_480_320";
+    const baseApiUrl = "https://nivea-backend.onrender.com/api/engagement?response=";
+    const dimensionParam = "&dimension=dimension_300_250";
 
     function trackResponse(response) {
         fetch(baseApiUrl + response + dimensionParam, {
             method: "POST",
             headers: { "Content-Type": "application/json" }
         })
-            .then(response => response.text())
+            .then(response => response.text()) // Handle plain text responses
             .then(data => console.log(`User clicked ${response}:`, data))
             .catch(error => console.error(`Error tracking ${response} click:`, error));
     }
@@ -169,5 +168,4 @@ document.addEventListener("DOMContentLoaded", function () {
     yesBtn.addEventListener("click", () => trackResponse("yes"));
     noBtn.addEventListener("click", () => trackResponse("no"));
 });
-
 start();
