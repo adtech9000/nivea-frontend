@@ -64,9 +64,9 @@ function startFrameThree(decision) {
 
     setTimeout(() => {
         if (decision === true) {
-            result.innerHTML = "<p style='margin-bottom: 13px'>Good to know</p> <div class='lines'><div>"
+            result.innerHTML = "<p style='margin-bottom: 13px; margin-top:20px'>Good to know</p> <div class='lines'><div>"
         } else {
-            result.innerHTML = "<p style='border-bottom:2px solid #ACB3C1; padding-bottom:10px'>Eccrine glands helps to cool your body</p>  <p style='margin-top:5px;'>Apocrine glands are often responsible for odour</p>"
+            result.innerHTML = "<p style='border-bottom:2px solid #ACB3C1; padding-bottom:8px; margin-top:5px'>Eccrine glands helps to cool your body</p>  <p style='margin-top:5px;'>Apocrine glands are often responsible for odour</p>"
         }
     }, 1000)
 
@@ -76,9 +76,9 @@ function startFrameThree(decision) {
     setTimeout(() => {
         loader.style.display = "flex";
         if (decision === true) {
-            loader.style.top = `${yesPosition + 17}rem`;
+            loader.style.top = `${yesPosition + 13}rem`;
         } else {
-            loader.style.top = `${noPosition + 20}rem`;
+            loader.style.top = `${noPosition + 16}rem`;
         }
     }, 2000)
 
@@ -109,7 +109,7 @@ function startFrameFour() {
 
     setTimeout(() => {
         startFrameFive();
-    }, 8000)
+    }, 6000)
 
 }
 
