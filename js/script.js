@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const noBtn = document.getElementById("no");
 
     if (!yesBtn || !noBtn) return;
-    const baseApiUrl = "https://nivea-backend.onrender.com/api/engagement?response=";
+    const baseApiUrl = "https://nivea-backend-production.up.railway.app/api/engagement?response=";
     const dimensionParam = "&dimension=dimension_300_250";
 
     function trackResponse(response) {
